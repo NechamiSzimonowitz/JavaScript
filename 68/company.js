@@ -27,11 +27,6 @@ function employeesCreator(name, department) {
             console.log(`employee Name: ${this.name} employee department: ${this.department}`)
         }
     };
-    /* this.name = name;
-     this.department = department;
-     this.printEmp = function () {
-         console.log(`employee Name: ${this.name} employee department: ${this.department}`)
-     };*/
 }
 
 const emp1 = employeesCreator('John Doe', 'Accounting');
