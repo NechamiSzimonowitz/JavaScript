@@ -21,11 +21,11 @@ window.myApp = (function (module) {
             }
         }
 
-        return {
-
-            getMonth,
-            getMonthIndex
-        };
+        /* return {
+ 
+             getMonth,
+             getMonthIndex
+         };*/
     })
     return module;
 }(window.myApp || {}));
