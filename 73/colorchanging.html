@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>changes colors</title>
+</head>
+<style>
+    img {
+        position: absolute;
+        left: 40%;
+        top: 30%;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: auto;
+    }
+
+    th,
+    td {
+        border: 1px solid red;
+    }
+</style>
+
+<body>
+    <img src="pictures/scenery.jpg" alt="scenery">
+    <button id="colorchanging"> Change colors</button>
+    <button id="stopchanging">Stop</button>
+
+    <table id="colorchanges">
+        <caption>
+            <h2>my colorchanges</h2>
+        </caption>
+        <thead>
+            <tr>
+                <td>color</td>
+                <td>time</td>
+            </tr>
+        </thead>
+    </table>
+
+
+    <script src="colorchanging.js"></script>
+</body>
+
+</html>

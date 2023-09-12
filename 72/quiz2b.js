@@ -14,7 +14,6 @@ window.app = function () {
                 return counterscreated;
             }
         };
-
     }
     return counterCreator;
 
