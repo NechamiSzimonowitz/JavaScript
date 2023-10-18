@@ -22,9 +22,12 @@ for (let i = 0; i < 20; i++) {
     people[i] = {
         name: boysNames[randomNumber],
         lastName: boysLastNames[randomNumber],
-        gender: "male",
+        gender: "Male",
         id: ids[i + 1],
         spouse: girlsNames[randomNumber]
     };
+
+};
+for (let m = 0; m < people.length; m++) {
     console.log(people[i].name, people[i].lastName, people[i].gender, people[i].spouse);
 };
