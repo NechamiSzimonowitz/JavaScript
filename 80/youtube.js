@@ -6,7 +6,7 @@
     }
     const songs = await response.json();
     songs.forEach(song => {
-        $('.musicOptions').append(` <a href=${song.link}><img src=${song.image} width="50" height="60" />Song Title: ${song.title}</a> </br>`)
+        $('.musicOptions').append(` <a href=${song.link}><img src=${song.image || "images/mikejpg.jpg"} width="50" height="60" />Song Title: ${song.title}</a> </br>`)
 
     });
 })();
