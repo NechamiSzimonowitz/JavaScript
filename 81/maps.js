@@ -10,7 +10,7 @@
 
         const map = new Map(document.getElementById('map'), {
             zoom: 18,
-            center: position,
+            center: { lat: -25.344, lng: 131.031 },
             mapId: 'DEMO_MAP_ID',
             mapTypeId: google.maps.MapTypeId.HYBRID
         });
