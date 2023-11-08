@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Mr. Potato head!</title>
+</head>
+<style>
+    body {
+        background-image: url('images/backround.jpg');
+        background-size: cover;
+        background-repeat: repeat;
+    }
+
+    #mainScreen {
+        float: right;
+        width: 75%;
+        height: 100%;
+        margin: 0;
+    }
+
+    #title {
+        border-color: red;
+        border-radius: 10px;
+        border-style: solid;
+        padding: 5px;
+        text-align: center;
+        background-color: beige;
+        position: fixed;
+        right: 17%;
+    }
+
+    #body {
+        position: fixed;
+        right: 25%;
+        top: 15%;
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 25%;
+        height: 100%;
+        border-right: 1px solid black;
+        background-color: lightblue;
+        overflow: auto;
+
+    }
+
+    #save {
+        position: fixed;
+        top: 48px;
+        right: 5px;
+    }
+
+    #saveName {
+        position: fixed;
+        right: 5px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .draggable {
+        position: absolute;
+    }
+</style>
+
+<body>
+    <audio autoplay loop>
+        <source src="images/backroundMusic.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="mainScreen">
+        <h1 id="title">DESIGN YOUR MR. POTATO HEAD</h1>
+        <img src="images/body.png" id="body">
+    </div>
+    <label><input type="text" id="saveName" placeholder="Name to save"></label>
+
+    <div id="sidebar"></div>
+    <p id="bodyParts">
+        <img src="images/eyes1.png" class="draggable">
+        <<img src="images/eyes2.png" class="draggable">
+            <img src="images/eyes3.png" class="draggable">
+            <img src="images/leftEar.png" class="draggable">
+            <img src="images/rightEar.png" class="draggable">
+            <img src="images/mouth2.png" class="draggable">
+            <img src="images/nose1.png" class="draggable">
+            <img src="images/nose2.png" class="draggable">
+            <img src="images/mouth1.png" class="draggable">
+    </p>
+
+
+    <img src="images/save.png" id="save">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="potatoHead.js"></script>
+
+</body>
+
+</html>
