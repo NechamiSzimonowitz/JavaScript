@@ -36,6 +36,7 @@
             const top = (e.pageY - offset.y);
             const left = (e.pageX - offset.x);
             draggingElement.css({ 'top': top + 'px', 'left': left + 'px' });
+            draggingElement.index(1);
         }
     }
     $('#save').on('click', () => {
