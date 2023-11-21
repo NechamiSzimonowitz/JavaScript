@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #theCanvas {
+            display: block;
+        }
+
+        #choose {
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="choose"><label for="color"><input type="color" id="color"></label>
+        <label>Size:<input type="text" id="size"></label>
+        <button id="new">New Ball</button>
+    </div>
+    <canvas id="theCanvas">
+    </canvas>
+
+
+
+    <script src="ball.js"></script>
+    <script src="hw87.js"></script>
+</body>
+
+</html>
