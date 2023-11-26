@@ -3,9 +3,9 @@ class person {
     #Last;
     #Age;
     constructor(firstName, lastName, age) {
-        if (age > 0 & age < 120) {
-            this.#First = firstName;
-            this.#Last = lastName;
+        this.#First = firstName;
+        this.#Last = lastName;
+        if (age > 0 || age < 120) {
             this.#Age = age;
         }
         else {
@@ -20,11 +20,10 @@ class person {
     }
     get age() {
         return this.#Age;
-
     }
 
     set firstName(Name) {
-        firstName = Name;
+        this.firstName = Name;
     }
     set lastName(Last) {
         this.lastName = Last;

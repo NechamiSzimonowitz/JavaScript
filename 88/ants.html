@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #theCanvas {
+            display: block;
+        }
+
+        #form {
+            top: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <label> How Many ants?<input type="number" id="amount"></label>
+        <input type="color" id="color">
+        <button id="create">Create Ants</button>
+    </div>
+
+    <canvas id="theCanvas"></canvas>
+
+    <script src="ants.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,3 @@
-
-
 const canvas = document.querySelector('#theCanvas');
 const context = canvas.getContext('2d');
 
@@ -20,8 +18,6 @@ newButton.addEventListener('click', () => {
     RADIUS = parseInt(document.getElementById('size').value);
     const ballColor = document.getElementById('color').value;
 
-
-
     const newBall = {
         x: RADIUS,
         y: RADIUS,
@@ -39,7 +35,7 @@ newButton.addEventListener('click', () => {
 
 
 function drawBall() {
-    context.clearRect(0, 0, 10000, 5000);
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     balls.forEach(ball => {
         context.beginPath();
         context.fillStyle = ball.color;
