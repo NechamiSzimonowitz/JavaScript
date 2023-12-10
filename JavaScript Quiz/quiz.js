@@ -20,6 +20,10 @@ class Order {
         });
         return total;
     }
+
+    printToDom(customer, address, items) {
+        //print the above to DOM
+    }
 }
 
 const searchButton = document.getElementById('search');
