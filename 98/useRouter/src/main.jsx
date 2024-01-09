@@ -1,0 +1,34 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import SellHouse from './sellHouse.jsx';
+import BuyHouse from './buyHouse.jsx';
+
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+  },
+  {
+    path: '/SellHouse',
+    element: <SellHouse />
+  },
+  {
+    path: '/BuyHouse',
+    element: <BuyHouse />
+  }
+
+])
+
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
+)
