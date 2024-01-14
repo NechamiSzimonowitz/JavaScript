@@ -76,7 +76,6 @@ function addCommentsToDom(comment) {
 
     const commentButtons = document.querySelectorAll('.commentButton');
     commentButtons.forEach(button => {
-        console.log(button);
         button.innerText = 'Hide Comments';
         button.addEventListener('click', () => viewButton(button, comment.postId));
     });
@@ -162,7 +161,11 @@ const commentButton = document.querySelectorAll('.commentButton');
 
 function hideComments(postId) {
     const comments = document.querySelectorAll('.comment');
-    comments.forEach(comment => comment.remove());
+    comments.forEach(comment => {
+        comment.remove();
+
+    })
+
 
     commentButton.forEach(button => {
 
