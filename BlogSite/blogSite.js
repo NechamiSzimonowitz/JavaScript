@@ -74,11 +74,11 @@ function addCommentsToDom(comment) {
     separater.className = 'comment';
     document.body.append(separater);
 
-    const commentButtons = document.querySelectorAll('.commentButton');
-    commentButtons.forEach(button => {
-        button.innerText = 'Hide Comments';
-        button.addEventListener('click', () => viewButton(button, comment.postId));
-    });
+    /* const commentButtons = document.querySelectorAll('.commentButton');
+     commentButtons.forEach(button => {
+         button.innerText = 'Hide Comments';
+         button.addEventListener('click', () => viewButton(button, comment.postId));
+     });*/
 
 
 }
