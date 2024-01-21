@@ -29,27 +29,35 @@ function addToDom(user) {
 }
 
 function addPostToDom(post) {
+
+    const postDiv = document.createElement('div');
+    postDiv.className = 'postDiv';
+    postDiv.style.border = ".5px solid black";
+    document.body.append(postDiv);
+
     const title = document.createElement('div');
     title.innerText = (`Post Title:  ${post.title}`);
     title.style.padding = "8px";
-    document.body.append(title);
+    postDiv.append(title);
 
     const body = document.createElement('div');
     body.innerText = (`Post:  ${post.body}`);
     body.style.padding = "8px";
-    document.body.append(body);
+    postDiv.append(body);
 
     const comments = document.createElement('button');
     comments.innerText = ('View Comments');
     comments.className = 'commentButton';
     comments.dataset.postId = post.postId;
-    document.body.append(comments);
+    postDiv.append(comments);
 
     comments.addEventListener('click', () => viewButton(comments, post.userId));
 
 }
 
 function addCommentsToDom(comment) {
+
+
     const name = document.createElement('div');
     name.innerText = (`Commenter:  ${comment.name}`);
     name.style.padding = "8px";
@@ -67,20 +75,6 @@ function addCommentsToDom(comment) {
     body.style.padding = "8px";
     body.className = 'comment';
     document.body.append(body);
-
-
-    const separater = document.createElement('div');
-    separater.innerText = '--------------------------------------------------------------------------------------------------';
-    separater.className = 'comment';
-    document.body.append(separater);
-
-    /* const commentButtons = document.querySelectorAll('.commentButton');
-     commentButtons.forEach(button => {
-         button.innerText = 'Hide Comments';
-         button.addEventListener('click', () => viewButton(button, comment.postId));
-     });*/
-
-
 }
 
 async function fetchAndPrint() {
@@ -106,6 +100,7 @@ async function fetchAndPrint() {
 };
 
 fetchAndPrint();
+
 
 async function eventListener(id) {
     document.body.innerHTML = '';
