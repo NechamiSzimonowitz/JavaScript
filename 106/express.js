@@ -5,7 +5,7 @@ const parseNum = (req, res, next) => {
     const { num1, num2 } = req.params;
 
     if (isNaN(num1) || isNaN(num2)) {
-        res.status(400).send('invalid number');
+        res.status(400).end('invalid number');
     }
     else {
         req.num1 = parseFloat(num1);
@@ -18,7 +18,7 @@ const checkIfOperator = (req, res, next) => {
     const { operator } = req.params;
 
     if (operator !== '+' && operator !== '-' && operator !== '*' && operator !== '/') {
-        res.status(404).send('invalid operator');
+        res.status(404).end('invalid operator');
     } else {
         req.operator = operator;
         next();
@@ -53,7 +53,7 @@ app.get('/calculate/:num1/:operator/:num2', parseNum, checkIfOperator, (req, res
             break;
 
     }
-    res.send(`calculation result: ${result}`);
+    res.end(`calculation result: ${result}`);
 })
 
 app.listen(8080);
