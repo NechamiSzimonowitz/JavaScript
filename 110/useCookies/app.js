@@ -20,12 +20,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-const name = document.getElementById('name');
-const numTimes = req.cookies.times;
+
 
 app.use((req, res, next) => {
-  numTimes = req.cookies.times;
-  name = req.cookies.name;
+  req.cookies.name = req.query.name;
+  const numTimes = req.cookies.times;
+
 
   res.cookie('times', JSON.stringify(numTimes), {
     maxAge: 200000,

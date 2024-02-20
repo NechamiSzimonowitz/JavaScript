@@ -10,6 +10,7 @@
 <body>
 
   <label>your Name:<input type="text" id="name"></label>
+  <button>submit</button>
   <h1 value="{{name}}"></h1>
   <h1 value="{{numTimes}}"></h1>
 
