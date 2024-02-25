@@ -3,50 +3,57 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'hjs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use('/stylesheets', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+}));
 
+app.use('/:id/:num', (res, req, next) => {
+  const itemId = req.params.id;
+  if (!req.session.id) {
+    req.session.id = [{ itemId, num }];
+  }
+  else {
+    req.session.id.push({ itemId, num });
+  }
 
-app.use((req, res, next) => {
-  req.cookies.name = req.query.name;
-  const numTimes = req.cookies.times;
-
-
-  res.cookie('times', JSON.stringify(numTimes), {
-    maxAge: 200000,
-    secure: true
-  });
+  res.redirect('/');
 
   next();
 });
 
-app.use('/', (req, res, next) => {
-  req.cookies.numTimes += 1;
-  next();
-})
-
-app.use('/printTimes', (req, res, next) => {
-  times.innerText = numTimes;
-  namePlace.innerText = name;
+app.use('/showCart', (res, req, next) => {
+  req.session.id.forEach(id => {
+    res.message(id);
+  });
 
 })
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -61,7 +68,13 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('layout');
+  res.render('layout', {
+    partials: {
+      content: 'error'
+    }
+  });
 });
+
+app.locals.appTitle = 'PCS Music Store';
 
 module.exports = app;
